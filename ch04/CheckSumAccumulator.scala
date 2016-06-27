@@ -20,4 +20,9 @@ object CheckSumAccumulator {
       cache += (s -> cs)
       cs
     }
+
+  def main(args: Array[String]) {
+    if(args.length > 0)
+      println(calculate(args(0)))    
+  }
 }
