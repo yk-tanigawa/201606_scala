@@ -1,0 +1,4 @@
+class Wire {
+  def inverter(input: Wire, output: Wire)
+  def andGate(a1: Wire, a2: Wire, output: Wire)
+  def orGate(o1: Wire, o2: Wire, output: Wire)
