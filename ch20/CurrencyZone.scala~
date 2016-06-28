@@ -1,0 +1,17 @@
+abstract class CurrencyZone {
+  type Currency <: AbstractCurrency
+  def make(x: Long): Currency
+
+  abstract class AbstractCurrency {
+    val amount: Long
+    def designation: String
+    def + (that: Currency): Currency =
+      make(this.amount + that.amount)
+    def * (that: Currency): Currency =
+      make(this.amount * that.amount)
+    def - (that: Currency): Currency =
+      make(this.amount - that.amount)
+    def / (that: Double): Currency =
+      make((this.amount / that).toLong)
+    def / (that: Currency) =
+      this.amount.toDouble / that.amount
